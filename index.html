@@ -5,6 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio Website</title>
     <style>
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideInFromLeft {
+            from {
+                transform: translateX(-100%);
+            }
+            to {
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInFromRight {
+            from {
+                transform: translateX(100%);
+            }
+            to {
+                transform: translateX(0);
+            }
+        }
+
         body {
             font-family: 'Arial', sans-serif;
             line-height: 1.6;
@@ -12,6 +39,7 @@
             padding: 0;
             background-color: #f4f4f4;
             color: #333;
+            animation: fadeIn 2s ease-in;
         }
 
         header {
@@ -24,41 +52,43 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            animation: fadeIn 1s ease-in;
+            width: 100%;
         }
 
         .name-title {
-            font-size: 2.5em; /* Smaller size for the name */
+            font-size: 2em; /* Adjusted size for the name */
             font-weight: bold;
             color: #fff;
-            margin-bottom: 1em;
+            margin-bottom: 0.5em;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-            background-color: #4a4a40; /* Optional: background color for better visibility */
-            padding: 0.5em 1em;
-            border-radius: 8px;
             text-align: center;
+            animation: fadeIn 1.5s ease-in;
         }
 
         .header-content {
             display: flex;
             align-items: center;
-            justify-content: center;
+            gap: 1em; /* Gap between profile picture and navigation items */
             width: 100%;
             max-width: 1200px;
+            padding: 0 2em; /* Padding for alignment */
             margin: 0 auto;
-            padding: 0 2em;
         }
 
         .header-content .profile-pic {
-            max-width: 200px; /* Larger profile picture */
+            max-width: 150px; /* Increased profile picture size */
             border-radius: 50%;
-            margin-right: 2em; /* Increase spacing between picture and text */
+            animation: slideInFromLeft 1s ease-in;
         }
 
         nav ul {
             list-style: none;
             padding: 0;
             display: flex;
-            gap: 2em;
+            gap: 2em; /* Increased gap between navigation items */
+            animation: slideInFromRight 1s ease-in;
+            margin: 0; /* Remove default margin */
         }
 
         nav ul li {
@@ -69,12 +99,16 @@
             color: #fff;
             text-decoration: none;
             font-weight: bold;
-            font-size: 1.2em;
+            font-size: 1.2em; /* Increased font size */
             transition: color 0.3s;
+            padding: 0.7em 1.5em; /* Increased padding for bigger buttons */
+            border-radius: 4px; /* Added border radius for better aesthetics */
+            background-color: #4a4a40; /* Background color for buttons */
         }
 
         nav ul li a:hover {
             color: #ffeb3b;
+            background-color: #5c5c42; /* Background color change on hover */
         }
 
         main {
@@ -87,6 +121,7 @@
             margin: 2em 0;
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
             border-radius: 8px;
+            animation: fadeIn 2s ease-in;
         }
 
         .section h2 {
@@ -172,10 +207,11 @@
             background-color: #6e6e53;
             color: #fff;
             text-align: center;
-            padding: 1em 0;
+            padding: 0.5em 0; /* Reduced padding */
             position: sticky;
             bottom: 0;
             width: 100%;
+            animation: fadeIn 2s ease-in;
         }
     </style>
 </head>
@@ -185,7 +221,7 @@
             Angelina Ramsunar
         </div>
         <div class="header-content">
-            <img src="profile.jpg" alt="Your Name" class="profile-pic">
+            <img src="profile.jpg" alt="Angelina Ramsunar" class="profile-pic">
             <nav>
                 <ul>
                     <li><a href="#about">About Me</a></li>
@@ -212,19 +248,19 @@
             <h2>Resume/CV</h2>
             <a href="Resume.pdf" download class="button">Download My Resume</a>
             <div class="resume-content">
-                <h3>Experience</h3>
-                <p>Job Title at Company - Description of your role and responsibilities...</p>
+                <h3>Courses</h3>
+                <p>Vodacom Coding for gils - Certificate for Web development in HTML and CSS</p>
                 <h3>Education</h3>
-                <p>Degree at University - Description of your studies...</p>
+                <p>Degree at North-West University - BSc in Information Technology</p>
             </div>
         </section>
 
         <section id="projects" class="section">
             <h2>Projects</h2>
             <div class="project">
-                <h3>Project One</h3>
-                <p>Description of project one.</p>
-                <a href="https://github.com/yourusername/project-one" class="button">GitHub Repository</a>
+                <h3>System Analysis Project</h3>
+                <p>In my second year of studying IT, my group and I were tasked with creating a system based on a hypothetical scenario we developed ourselves. We utilized the System Development Life Cycle (SDLC) to guide our project. The system was developed using Visual Studio, with Draw.io employed for creating models and diagrams. We managed our project timeline with Microsoft Project, and collaborated effectively through GitHub for version control and teamwork.</p>
+                <a href="https://github.com/Chris-NPC/Project-Zoomazing/tree/main/CMPG223_Group22_Project" class="button">GitHub Repository</a>
             </div>
             <div class="project">
                 <h3>Project Two</h3>
@@ -241,6 +277,9 @@
                 <li>Teamwork</li>
                 <li>Problem Solving</li>
                 <li>Empathy</li>
+                <li>Conflict Resolution</li>
+                <li>Integrity</li>
+                <li>Patient</li>
             </ul>
         </section>
 
@@ -254,5 +293,17 @@
     <footer>
         <p>&copy; 2024 Angelina Ramsunar. All rights reserved.</p>
     </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('nav ul li a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
 </body>
 </html>
