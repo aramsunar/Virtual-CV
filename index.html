@@ -18,21 +18,51 @@
             background-color: #6e6e53;
             color: #fff;
             padding: 1em 0;
-            text-align: center;
             position: sticky;
             top: 0;
             z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .name-title {
+            font-size: 2.5em; /* Smaller size for the name */
+            font-weight: bold;
+            color: #fff;
+            margin-bottom: 1em;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            background-color: #4a4a40; /* Optional: background color for better visibility */
+            padding: 0.5em 1em;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2em;
+        }
+
+        .header-content .profile-pic {
+            max-width: 200px; /* Larger profile picture */
+            border-radius: 50%;
+            margin-right: 2em; /* Increase spacing between picture and text */
         }
 
         nav ul {
             list-style: none;
             padding: 0;
             display: flex;
-            justify-content: center;
+            gap: 2em;
         }
 
         nav ul li {
-            margin: 0 1em;
+            margin: 0;
         }
 
         nav ul li a {
@@ -45,6 +75,10 @@
 
         nav ul li a:hover {
             color: #ffeb3b;
+        }
+
+        main {
+            padding-top: 2em; /* Adjust for spacing below the header */
         }
 
         .section {
@@ -63,12 +97,6 @@
             text-transform: uppercase;
         }
 
-        .profile-pic {
-            max-width: 150px;
-            border-radius: 50%;
-            margin: 1em 0;
-        }
-
         .social-links {
             display: flex;
             gap: 1em;
@@ -84,7 +112,7 @@
         }
 
         .button:hover {
-            background-color: #6e6e53;
+            background-color: #5c5c42;
         }
 
         .resume-content h3 {
@@ -137,7 +165,7 @@
         }
 
         form button:hover {
-            background-color: #6e6e53;
+            background-color: #5c5c42;
         }
 
         footer {
@@ -153,22 +181,27 @@
 </head>
 <body>
     <header>
-        <nav>
-            <ul>
-                <li><a href="#about">About Me</a></li>
-                <li><a href="#resume">Resume/CV</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
+        <div class="name-title">
+            Angelina Ramsunar
+        </div>
+        <div class="header-content">
+            <img src="profile.jpg" alt="Your Name" class="profile-pic">
+            <nav>
+                <ul>
+                    <li><a href="#about">About Me</a></li>
+                    <li><a href="#resume">Resume/CV</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
     <main>
         <section id="about" class="section">
             <h2>About Me</h2>
-            <p>I am a dedicated third-year student pursuing a degree in Information Technology with a focus on Software Development. I have a strong passion for Project Management and thrive in high-pressure environments. I take pride in approaching every task with the utmost diligence and strive to deliver work of the highest quality. My goal is to apply my skills and knowledge to contribute effectively to dynamic and innovative projects.I am honored to have been awarded a bursary for the years 2023 and 2024 by SAP</p>
-            <img src="profile.jpg" alt="Your Name" class="profile-pic">
+            <p>I am a dedicated third-year student pursuing a degree in Information Technology with a focus on Software Development. I have a strong passion for Project Management and thrive in high-pressure environments. I take pride in approaching every task with the utmost diligence and strive to deliver work of the highest quality. My goal is to apply my skills and knowledge to contribute effectively to dynamic and innovative projects. I am honored to have been awarded a bursary for the years 2023 and 2024 by SAP.</p>
             <div class="social-links">
                 <a href="https://github.com/aramsunar" class="button">GitHub</a>
                 <a href="https://www.linkedin.com/in/angelina-ramsunar-12953b316/overlay/about-this-profile/?trk=eml-email_network_conversations_01-header-0-profile_glimmer&lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base%3BL3X209r2SRGJyjxjTfraBA%3D%3D" class="button">LinkedIn</a>
@@ -204,9 +237,10 @@
             <h2>Soft Skills</h2>
             <ul class="skills-list">
                 <li>Adaptability</li>
-                <li>Active listening</li>
+                <li>Active Listening</li>
                 <li>Teamwork</li>
                 <li>Problem Solving</li>
+                <li>Empathy</li>
             </ul>
         </section>
 
@@ -214,7 +248,6 @@
             <h2>Contact</h2>
             <p>Email: angelinajaedene@gmail.com</p>
             <p>Phone: +27 711 624 919</p>
-
         </section>
     </main>
 
@@ -223,4 +256,3 @@
     </footer>
 </body>
 </html>
-
