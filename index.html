@@ -74,6 +74,8 @@
             max-width: 1200px;
             padding: 0 2em; /* Padding for alignment */
             margin: 0 auto;
+            flex-wrap: wrap; /* Allow wrapping on small screens */
+            justify-content: center; /* Center content on small screens */
         }
 
         .header-content .profile-pic {
@@ -89,6 +91,8 @@
             gap: 2em; /* Increased gap between navigation items */
             animation: slideInFromRight 1s ease-in;
             margin: 0; /* Remove default margin */
+            flex-wrap: wrap; /* Allow wrapping on small screens */
+            justify-content: center; /* Center content on small screens */
         }
 
         nav ul li {
@@ -212,6 +216,32 @@
             bottom: 0;
             width: 100%;
             animation: fadeIn 2s ease-in;
+        }
+
+        @media (max-width: 600px) {
+            .name-title {
+                font-size: 1.5em; /* Adjusted size for the name */
+            }
+
+            .header-content {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .header-content .profile-pic {
+                max-width: 100px; /* Reduced profile picture size for mobile */
+            }
+
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+                gap: 1em; /* Reduced gap between navigation items for mobile */
+            }
+
+            nav ul li a {
+                font-size: 1em; /* Reduced font size for mobile */
+                padding: 0.5em 1em; /* Reduced padding for mobile */
+            }
         }
     </style>
 </head>
